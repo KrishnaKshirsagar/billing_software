@@ -3,7 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 
-import healthRoutes from "./routes/health.routes";
+import routes from "./routes";
 
 const app = express();
 
@@ -22,6 +22,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(morgan("dev"));
 
-app.use("/api/health", healthRoutes);
+app.use("/api", routes);
 
 export default app;
